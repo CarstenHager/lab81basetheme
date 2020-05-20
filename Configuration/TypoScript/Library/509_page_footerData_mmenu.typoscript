@@ -1,0 +1,10 @@
+##################################
+# MMenu nur einbinden wenn in den Konstanten aktiviert
+##################################
+[{$plugin.lab81basetheme.config.mmenu} > 0]
+    page.includeJSFooter {
+        mmenu0 = EXT:lab81basetheme/Resources/Public/Contrib/jQuery-mmenu/dist/jquery.mmenu.all.js
+        mmenu1 = EXT:lab81basetheme/Resources/Public/Contrib/jQuery-mmenu/dist/wrappers/bootstrap/jquery.mmenu.bootstrap4.js
+        mmenu5 = EXT:lab81basetheme/Resources/Public/JavaScript/mmenu.js
+    }
+[end]

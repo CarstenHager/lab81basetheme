@@ -1,0 +1,4 @@
+##################################
+# Seite mit der ID 2 (Home Shortcut) aus der Sitemap entfernen
+##################################
+tt_content.menu_sitemap.dataProcessing.10.excludeUidList = 25

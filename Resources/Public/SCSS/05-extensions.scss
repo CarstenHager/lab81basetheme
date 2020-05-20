@@ -1,0 +1,109 @@
+// CSS für Kontaktformuar
+.ce-form_formframework{
+  .form-group{
+    .input.checkbox{
+      .form-check{
+        padding-left: 0;
+
+        span{
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.vh100{
+    height: calc(100vh - 100px);
+  }
+
+
+// Carousel Cover
+.carousel-100{
+  .carousel-item {
+    height: calc(100vh - 100px);
+
+    img {
+      min-height: 350px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+}
+
+// blog list
+.bloglist-small {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bloglist-small li {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.bloglist-small li h5 {
+  margin-bottom: 5px;
+}
+
+.bloglist-small li .txt {
+  padding-left: 80px;
+}
+
+.bloglist-small li .read {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bloglist-small li .info {
+  display: block;
+  margin: 0;
+  font-size: 11px;
+  color: #aaa;
+}
+
+.bloglist-small img {
+  position: absolute;
+}
+
+.date-box {
+  background: #eee;
+  width: 60px;
+  position: absolute;
+  text-align: center;
+  color: var(--primary);
+}
+
+.date-box .day {
+  display: block;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.date-box .month {
+  font-size: 12px;
+  display: block;
+  letter-spacing: 5px;
+  padding-left: 5px;
+  background: #fff;
+  color: #222;
+}
+
+//News
+.news-category-menu,
+.news-date-menu {
+  a.active,
+  .itemactive {
+    font-weight: bold;
+  }
+}
+
+.news-tags-item {
+  display: inline-block;
+}

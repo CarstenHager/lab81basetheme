@@ -1,0 +1,4 @@
+config.sourceopt {
+    enabled = 1
+    formatHtml = 1
+}

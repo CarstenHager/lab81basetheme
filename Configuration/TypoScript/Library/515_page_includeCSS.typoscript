@@ -1,0 +1,45 @@
+##################################
+# MMenu nur einbinden wenn in den Konstanten aktiviert
+##################################
+[{$plugin.lab81basetheme.config.mmenu} > 0]
+    page.includeCSS.mmenu1 = EXT:lab81basetheme/Resources/Public/Contrib/jQuery-mmenu/dist/jquery.mmenu.all.css
+[end]
+
+##################################
+# Pannellum nur einbinden wenn in den Konstanten aktiviert
+##################################
+[{$plugin.lab81basetheme.config.pannellum} > 0]
+    page.includeCSS.pannellum = EXT:lab81basetheme/Resources/Public/Contrib/pannellum/pannellum.css
+[end]
+
+##################################
+# OwlSlider nur einbinden wenn in den Konstanten aktiviert
+##################################
+[{$plugin.lab81basetheme.config.owlslider} > 0]
+    page.includeCSS.owlslider1 = EXT:lab81basetheme/Resources/Public/Contrib/OwlCarousel/src/scss/owl.carousel.scss
+    page.includeCSS.owlslider2 = EXT:lab81basetheme/Resources/Public/Contrib/OwlCarousel/src/scss/owl.theme.default.scss
+[end]
+
+##################################
+# Allgemeines CSS
+##################################
+page.includeCSS{
+
+    ##################################
+    # CSS Anpassungen von Lab81
+    02menu = EXT:lab81basetheme/Resources/Public/SCSS/02-menue.scss
+    03typo = EXT:lab81basetheme/Resources/Public/SCSS/03-typography.scss
+    04layout = EXT:lab81basetheme/Resources/Public/SCSS/04-fullpage-layout.scss
+    05ext = EXT:lab81basetheme/Resources/Public/SCSS/05-extensions.scss
+    06media = EXT:lab81basetheme/Resources/Public/SCSS/06-media-queries.scss
+
+    ##################################
+    # Mask Elemente
+    10owl = EXT:lab81basetheme/Resources/Public/SCSS/10-mask-owlslider.scss
+    12time = EXT:lab81basetheme/Resources/Public/SCSS/12-mask-timeline.scss
+    13pano = EXT:lab81basetheme/Resources/Public/SCSS/13-mask-360grad.scss
+    14cover = EXT:lab81basetheme/Resources/Public/SCSS/14-mask-coverbackground.scss
+
+}
+
+

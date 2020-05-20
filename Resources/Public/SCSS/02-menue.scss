@@ -1,0 +1,75 @@
+// Brand Image
+.navbar-brand img{
+  height: 60px !important;
+  width: auto;
+}
+
+// Meta Wrapper Background
+.nav-meta-wrapper{
+  background: var(--primary);
+  a,a:hover,a:focus{
+    color:#fff !important;
+    font-size: 80% !important;
+  }
+  .nav-meta .meta-text a {
+    margin-right: 0rem;
+  }
+}
+
+/*rotating care*/
+.dropdown-toggle[aria-expanded="true"]:after {
+  transform: rotate(180deg);
+}
+.dropdown-submenu .dropdown-toggle.open:after {
+  transform: rotate(0deg);
+}
+/*for animation*/
+.dropdown-toggle:after {
+  transition: 0.7s;
+}
+
+
+// Dropdown Menu Animation
+@media (min-width: 992px) {
+  .dropdown .dropdown-menu {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.dropdown-menu {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}

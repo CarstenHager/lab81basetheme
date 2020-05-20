@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <meta type="array">
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+
+        <general>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Most important owl features</sheetTitle>
+                </TCEforms>
+
+                <el type="array">
+
+                    <owl-slider-id type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>20</size>
+                                <eval>trim</eval>
+                                <default>owl-example</default>
+                            </config>
+                            <label>ID Slider</label>
+                        </TCEforms>
+                    </owl-slider-id>
+
+                    <owl-slider-class type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>20</size>
+                                <eval>trim</eval>
+                                <default>owl-carousel</default>
+                            </config>
+                            <label>Class Slider</label>
+                        </TCEforms>
+                    </owl-slider-class>
+
+                    <owl-slider-items type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>6</size>
+                                <eval>trim</eval>
+                                <default>5</default>
+                            </config>
+                            <label>items</label>
+                        </TCEforms>
+                    </owl-slider-items>
+
+                    <owl-slider-itemsCustom type="array">
+                        <TCEforms type="array">
+                            <label>itemsCustom</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-itemsCustom>
+
+                    <owl-slider-itemsDesktop type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>6</size>
+                                <eval>trim</eval>
+                                <default>1199,4</default>
+                            </config>
+                            <label>itemsDesktop</label>
+                        </TCEforms>
+                    </owl-slider-itemsDesktop>
+
+                    <owl-slider-itemsDesktopSmall type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>6</size>
+                                <eval>trim</eval>
+                                <default>980,3</default>
+                            </config>
+                            <label>itemsDesktopSmall</label>
+                        </TCEforms>
+                    </owl-slider-itemsDesktopSmall>
+
+                    <owl-slider-itemsTablet type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>6</size>
+                                <eval>trim</eval>
+                                <default>768,2</default>
+                            </config>
+                            <label>itemsTablet</label>
+                        </TCEforms>
+                    </owl-slider-itemsTablet>
+
+                    <owl-slider-itemsTabletSmall type="array">
+                        <TCEforms type="array">
+                            <label>itemsTabletSmall</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-itemsTabletSmall>
+
+                    <owl-slider-itemsMobile type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>6</size>
+                                <eval>trim</eval>
+                                <default>768,2</default>
+                            </config>
+                            <label>itemsMobile</label>
+                        </TCEforms>
+                    </owl-slider-itemsMobile>
+
+
+                    <owl-slider-singleItem type="array">
+                        <TCEforms type="array">
+                            <label>singleItem</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-singleItem>
+
+
+                    <owl-slider-itemsScaleUp type="array">
+                        <TCEforms type="array">
+                            <label>itemsScaleUp</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-itemsScaleUp>
+
+                </el>
+            </ROOT>
+        </general>
+
+
+        <visibility1>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Basic Speeds // Autoplay // Navigation Pagination</sheetTitle>
+                </TCEforms>
+                <el type="array">
+
+                    <owl-slider-slideSpeed type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>6</size>
+                                <eval>trim</eval>
+                                <default>200</default>
+                            </config>
+                            <label>slideSpeed</label>
+                        </TCEforms>
+                    </owl-slider-slideSpeed>
+
+                    <owl-slider-paginationSpeed type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>6</size>
+                                <eval>trim</eval>
+                                <default>800</default>
+                            </config>
+                            <label>paginationSpeed</label>
+                        </TCEforms>
+                    </owl-slider-paginationSpeed>
+
+                    <owl-slider-rewindSpeed type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>6</size>
+                                <eval>trim</eval>
+                                <default>1000</default>
+                            </config>
+                            <label>rewindSpeed</label>
+                        </TCEforms>
+                    </owl-slider-rewindSpeed>
+
+
+
+                    <owl-slider-autoPlay type="array">
+                        <TCEforms type="array">
+                            <label>autoPlay</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-autoPlay>
+
+                    <owl-slider-stopOnHover type="array">
+                        <TCEforms type="array">
+                            <label>stopOnHover</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-stopOnHover>
+
+                    <owl-slider-navigation type="array">
+                        <TCEforms type="array">
+                            <label>navigation</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-navigation>
+
+
+                    <owl-slider-navigationText-prev type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>8</size>
+                                <eval>trim</eval>
+                                <default>prev","next"</default>
+                            </config>
+                            <label>navigationText prev</label>
+                        </TCEforms>
+                    </owl-slider-navigationText-prev>
+
+                    <owl-slider-navigationText-next type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>8</size>
+                                <eval>trim</eval>
+                                <default>next</default>
+                            </config>
+                            <label>navigationText next</label>
+                        </TCEforms>
+                    </owl-slider-navigationText-next>
+
+
+                    <owl-slider-rewindNav type="array">
+                        <TCEforms type="array">
+                            <label>rewindNav</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-rewindNav>
+
+                    <owl-slider-scrollPerPage type="array">
+                        <TCEforms type="array">
+                            <label>scrollPerPage</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-scrollPerPage>
+
+                    <owl-slider-pagination type="array">
+                        <TCEforms type="array">
+                            <label>pagination</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-pagination>
+
+                    <owl-slider-paginationNumbers type="array">
+                        <TCEforms type="array">
+                            <label>paginationNumbers</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-paginationNumbers>
+
+                </el>
+
+            </ROOT>
+        </visibility1>
+
+        <visibility2>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>Responsiv // CSS // Lazy </sheetTitle>
+                </TCEforms>
+                <el type="array">
+
+
+                    <owl-slider-responsive type="array">
+                        <TCEforms type="array">
+                            <label>responsive</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-responsive>
+
+                    <owl-slider-responsiveRefreshRate type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>8</size>
+                                <eval>trim</eval>
+                                <default>200</default>
+                            </config>
+                            <label>responsiveRefreshRate</label>
+                        </TCEforms>
+                    </owl-slider-responsiveRefreshRate>
+
+                    <owl-slider-responsiveBaseWidth type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>8</size>
+                                <eval>trim</eval>
+                                <default>window</default>
+                            </config>
+                            <label>responsiveBaseWidth</label>
+                        </TCEforms>
+                    </owl-slider-responsiveBaseWidth>
+
+
+                    <owl-slider-baseClass type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>8</size>
+                                <eval>trim</eval>
+                                <default>"owl-carousel"</default>
+                            </config>
+                            <label>baseClass</label>
+                        </TCEforms>
+                    </owl-slider-baseClass>
+
+                    <owl-slider-theme type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>8</size>
+                                <eval>trim</eval>
+                                <default>"owl-theme"</default>
+                            </config>
+                            <label>theme</label>
+                        </TCEforms>
+                    </owl-slider-theme>
+
+                    <owl-slider-lazyLoad type="array">
+                        <TCEforms type="array">
+                            <label>lazyLoad</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-lazyLoad>
+
+                    <owl-slider-lazyFollow type="array">
+                        <TCEforms type="array">
+                            <label>lazyFollow</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-lazyFollow>
+
+                    <owl-slider-lazyEffect type="array">
+                        <TCEforms type="array">
+                            <config type="array">
+                                <type>input</type><size>8</size>
+                                <eval>trim</eval>
+                                <default>"fade"</default>
+                            </config>
+                            <label>lazyEffect</label>
+                        </TCEforms>
+                    </owl-slider-lazyEffect>
+
+                    <owl-slider-autoHeight type="array">
+                        <TCEforms type="array">
+                            <label>autoHeight</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-autoHeight>
+
+                </el>
+
+            </ROOT>
+        </visibility2>
+
+        <visibility3>
+            <ROOT type="array">
+                <TCEforms>
+                    <sheetTitle>JSON // Mouse Events // Transitions // Other // Callbacks</sheetTitle>
+                </TCEforms>
+                <el type="array">
+
+                    <owl-slider-jsonPath type="array">
+                        <TCEforms type="array">
+                            <label>jsonPath</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-jsonPath>
+
+                    <owl-slider-jsonSuccess type="array">
+                        <TCEforms type="array">
+                            <label>jsonSuccess</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-jsonSuccess>
+
+                    <owl-slider-dragBeforeAnimFinish type="array">
+                        <TCEforms type="array">
+                            <label>dragBeforeAnimFinish</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-dragBeforeAnimFinish>
+
+                    <owl-slider-mouseDrag type="array">
+                        <TCEforms type="array">
+                            <label>mouseDrag</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-mouseDrag>
+
+                    <owl-slider-touchDrag type="array">
+                        <TCEforms type="array">
+                            <label>touchDrag</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>true</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-touchDrag>
+
+                    <owl-slider-transitionStyle type="array">
+                        <TCEforms type="array">
+                            <label>transitionStyle</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-transitionStyle>
+
+                    <owl-slider-addClassActive type="array">
+                        <TCEforms type="array">
+                            <label>addClassActive</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-addClassActive>
+
+                    <owl-slider-beforeUpdate type="array">
+                        <TCEforms type="array">
+                            <label>beforeUpdate</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-beforeUpdate>
+
+                    <owl-slider-afterUpdate type="array">
+                        <TCEforms type="array">
+                            <label>afterUpdate</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-afterUpdate>
+
+                    <owl-slider-beforeInit type="array">
+                        <TCEforms type="array">
+                            <label>beforeInit</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-beforeInit>
+
+                    <owl-slider-afterInit type="array">
+                        <TCEforms type="array">
+                            <label>afterInit</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-afterInit>
+
+                    <owl-slider-beforeMove type="array">
+                        <TCEforms type="array">
+                            <label>beforeMove</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-beforeMove>
+
+                    <owl-slider-afterMove type="array">
+                        <TCEforms type="array">
+                            <label>afterMove</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-afterMove>
+
+                    <owl-slider-afterAction type="array">
+                        <TCEforms type="array">
+                            <label>afterAction</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-afterAction>
+
+                    <owl-slider-startDragging type="array">
+                        <TCEforms type="array">
+                            <label>startDragging</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-startDragging>
+
+                    <owl-slider-afterLazyLoad type="array">
+                        <TCEforms type="array">
+                            <label>afterLazyLoad</label>
+                            <config type="array">
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array"><numIndex index="0">true</numIndex><numIndex index="1">true</numIndex></numIndex>
+                                    <numIndex index="1" type="array"><numIndex index="0">false</numIndex><numIndex index="1">false</numIndex></numIndex>
+                                </items>
+                                <default>false</default>
+                            </config>
+                        </TCEforms>
+                    </owl-slider-afterLazyLoad>
+
+                </el>
+
+            </ROOT>
+        </visibility3>
+
+
+    </sheets>
+</T3DataStructure>

@@ -1,0 +1,4 @@
+# Pfad zu den Partials ändern, ACHTUNG: komplettes Partials Verzeichnis kopieren!
+lib.contentElement {
+    partialRootPaths.1549449507 = EXT:lab81basetheme/Resources/Private/Extensions/gridgallery/Partials/
+}

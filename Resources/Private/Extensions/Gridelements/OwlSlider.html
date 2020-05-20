@@ -1,0 +1,96 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+
+
+    <div id="{data.flexform_owlslider-id}" class="owl-carousel">
+        <f:format.raw>
+            {data.tx_gridelements_view_column_0}
+        </f:format.raw>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var owl = $("#{data.flexform_owl-slider-id}");
+
+            owl.owlCarousel({
+                // Most important owl features
+                items : {data.flexform_owl-slider-items},
+                itemsCustom : {data.flexform_owl-slider-itemsCustom},
+                itemsDesktop : [{data.flexform_owl-slider-itemsDesktop}],
+                itemsDesktopSmall : [{data.flexform_owl-slider-itemsDesktopSmall}],
+                itemsTablet: [{data.flexform_owl-slider-itemsTablet}],
+                itemsTabletSmall: {data.flexform_owl-slider-itemsTabletSmall},
+                itemsMobile : [{data.flexform_owl-slider-itemsMobile}],
+                singleItem : {data.flexform_owl-slider-singleItem},
+                itemsScaleUp : {data.flexform_owl-slider-itemsScaleUp},
+
+                //Basic Speeds
+                slideSpeed : {data.flexform_owl-slider-slideSpeed},
+                paginationSpeed : {data.flexform_owl-slider-paginationSpeed},
+                rewindSpeed : {data.flexform_owl-slider-rewindSpeed},
+
+                //Autoplay
+                autoPlay : {data.flexform_owl-slider-autoPlay},
+                stopOnHover : {data.flexform_owl-slider-stopOnHover},
+
+                // Navigation
+                navigation : {data.flexform_owl-slider-navigation},
+                navigationText : ["{data.flexform_owl-slider-navigationText-prev}","{data.flexform_owl-slider-navigationText-next}"],
+                rewindNav : {data.flexform_owl-slider-rewindNav},
+                scrollPerPage : {data.flexform_owl-slider-scrollPerPage},
+
+                //Pagination
+                pagination : {data.flexform_owl-slider-pagination},
+                paginationNumbers: {data.flexform_owl-slider-paginationNumbers},
+
+                // Responsive
+                responsive: {data.flexform_owl-slider-responsive},
+                responsiveRefreshRate : {data.flexform_owl-slider-responsiveRefreshRate},
+                responsiveBaseWidth: {data.flexform_owl-slider-responsiveBaseWidth},
+
+                // CSS Styles
+                baseClass : "{data.flexform_owl-slider-baseClass}",
+                theme : "{data.flexform_owl-slider-theme}",
+
+                //Lazy load
+                lazyLoad : {data.flexform_owl-slider-lazyLoad},
+                lazyFollow : {data.flexform_owl-slider-lazyFollow},
+                lazyEffect : "{data.flexform_owl-slider-lazyEffect}",
+
+                //Auto height
+                autoHeight : {data.flexform_owl-slider-autoHeight},
+
+                //JSON
+                jsonPath : {data.flexform_owl-slider-jsonPath},
+                jsonSuccess : {data.flexform_owl-slider-jsonSuccess},
+
+                //Mouse Events
+                dragBeforeAnimFinish : {data.flexform_owl-slider-dragBeforeAnimFinish},
+                mouseDrag : {data.flexform_owl-slider-mouseDrag},
+                touchDrag : {data.flexform_owl-slider-touchDrag},
+
+                //Transitions
+                transitionStyle : {data.flexform_owl-slider-transitionStyle},
+
+                // Other
+                addClassActive : {data.flexform_owl-slider-addClassActive},
+
+                //Callbacks
+                beforeUpdate : {data.flexform_owl-slider-beforeUpdate},
+                afterUpdate : {data.flexform_owl-slider-afterUpdate},
+                beforeInit: {data.flexform_owl-slider-beforeInit},
+                afterInit: {data.flexform_owl-slider-afterInit},
+                beforeMove: {data.flexform_owl-slider-beforeMove},
+                afterMove: {data.flexform_owl-slider-afterMove},
+                afterAction: {data.flexform_owl-slider-afterAction},
+                startDragging : {data.flexform_owl-slider-startDragging},
+                afterLazyLoad : {data.flexform_owl-slider-afterLazyLoad}
+
+            });
+    });
+    </script>
+
+</html>

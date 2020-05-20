@@ -1,0 +1,16 @@
+##################################
+# Page Header Date
+##################################
+page{
+
+    ##################################
+    # Favicon
+    shortcutIcon = <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+
+    headerData {
+        ##################################
+        # Google Verfication Code
+        10 = TEXT
+        10.value = <meta name="google-site-verification" content="Y3Vrx2WuzSMFUfXzcZsDUIiCdZ06XIzXHM89vdMV0DM" />
+    }
+}
