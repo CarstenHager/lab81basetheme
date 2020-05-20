@@ -1,11 +1,11 @@
-import version from '../../_version';
+import * as pack from '../../../package.json';
 import options from './_options';
 import configs from './_configs';
 import translate from './translations/translate';
 import * as DOM from '../../_modules/dom';
 import * as i18n from '../../_modules/i18n';
 import * as media from '../../_modules/matchmedia';
-import { type, extend, transitionend, uniqueId, valueOrFn } from '../../_modules/helpers';
+import { type, extend, transitionend, uniqueId, valueOrFn, } from '../../_modules/helpers';
 //  Add the translations.
 translate();
 /**
@@ -30,7 +30,7 @@ var Mmenu = /** @class */ (function () {
             'openPanel',
             'closePanel',
             'closeAllPanels',
-            'setSelected'
+            'setSelected',
         ];
         //	Storage objects for nodes, variables, hooks and click handlers.
         this.node = {};
@@ -339,7 +339,7 @@ var Mmenu = /** @class */ (function () {
         //	Convert array to object with array.
         if (type(this.opts.extensions) == 'array') {
             this.opts.extensions = {
-                all: this.opts.extensions
+                all: this.opts.extensions,
             };
         }
         //	Loop over object.
@@ -564,9 +564,12 @@ var Mmenu = /** @class */ (function () {
         /** The parent panel. */
         var parentPanel = null;
         //  The parent panel was specified in the data-mm-parent attribute.
-        if (panel.dataset.mmParent) {
-            parentPanel = DOM.find(this.node.pnls, panel.dataset.mmParent)[0];
+        if (panel.getAttribute('data-mm-parent')) {
+            parentPanel = DOM.find(this.node.pnls, panel.getAttribute('data-mm-parent'))[0];
         }
+        // if (panel.dataset.mmParent) { // IE10 has no dataset
+        // parentPanel = DOM.find(this.node.pnls, panel.dataset.mmParent)[0];
+        // }
         //  The parent panel from a listitem.
         else {
             parentListitem = panel['mmParent'];
@@ -610,7 +613,8 @@ var Mmenu = /** @class */ (function () {
         var titleText = DOM.create('span');
         title.append(titleText);
         titleText.innerHTML =
-            panel.dataset.mmTitle ||
+            // panel.dataset.mmTitle || // IE10 has no dataset :(
+            panel.getAttribute('data-mm-title') ||
                 (opener ? opener.textContent : '') ||
                 this.i18n(this.opts.navbar.title) ||
                 this.i18n('Menu');
@@ -701,12 +705,12 @@ var Mmenu = /** @class */ (function () {
                 inMenu: target.closest('.mm-menu') === _this.node.menu,
                 inListview: target.matches('.mm-listitem > a'),
                 toExternal: target.matches('[rel="external"]') ||
-                    target.matches('[target="_blank"]')
+                    target.matches('[target="_blank"]'),
             };
             var onClick = {
                 close: null,
                 setSelected: null,
-                preventDefault: target.getAttribute('href').slice(0, 1) == '#'
+                preventDefault: target.getAttribute('href').slice(0, 1) == '#',
             };
             //	Find hooked behavior.
             for (var c = 0; c < _this.clck.length; c++) {
@@ -752,7 +756,7 @@ var Mmenu = /** @class */ (function () {
         return i18n.get(text, this.conf.language);
     };
     /**	Plugin version. */
-    Mmenu.version = version;
+    Mmenu.version = pack.version;
     /**	Default options for menus. */
     Mmenu.options = options;
     /**	Default configuration for menus. */

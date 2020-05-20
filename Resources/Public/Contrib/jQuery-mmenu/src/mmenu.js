@@ -86,7 +86,9 @@ Mmenu.wrappers = {
 export default Mmenu;
 
 //	Global namespace
-window.Mmenu = Mmenu;
+if (window) {
+    window.Mmenu = Mmenu;
+}
 
 //	jQuery plugin
 (function($) {
@@ -96,14 +98,14 @@ window.Mmenu = Mmenu;
 
             this.each(function(e, element) {
                 //	Don't proceed if the element already is a mmenu.
-                if (element['mmApi']) {
+                if (element.mmApi) {
                     return;
                 }
 
-                let menu = new Mmenu(element, options, configs),
+                var menu = new Mmenu(element, options, configs),
                     $menu = $(menu.node.menu);
 
-                //	Store the API.
+                //	Store the API for backward compat.
                 $menu.data('mmenu', menu.API);
 
                 $result = $result.add($menu);

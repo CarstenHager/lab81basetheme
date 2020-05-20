@@ -1,3 +1,10 @@
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 import Mmenu from '../../core/oncanvas/mmenu.oncanvas';
 import options from './_options';
 import configs from './_configs';
@@ -96,7 +103,8 @@ var initSearchPanel = function () {
         searchpanel.id = options.panel.id;
     }
     if (options.panel.title) {
-        searchpanel.dataset.mmTitle = options.panel.title;
+        searchpanel.setAttribute('data-mm-title', options.panel.title);
+        // searchpanel.dataset.mmTitle = options.panel.title; // IE10 has no dataset :(
     }
     var listview = DOM.create('ul');
     searchpanel.append(listview);
@@ -191,10 +199,10 @@ var initSearching = function (form) {
         data.panels = DOM.find(this.node.pnls, '.mm-panel');
         data.noresults = [this.node.menu];
     }
-    //	Filter out vertical submenus
-    data.panels = data.panels.filter(function (panel) { return !panel.parentElement.matches('.mm-listitem_vertical'); });
     //	Filter out search panel
     data.panels = data.panels.filter(function (panel) { return !panel.matches('.mm-panel_search'); });
+    //	Filter out vertical submenus
+    data.panels = data.panels.filter(function (panel) { return !panel.parentElement.matches('.mm-listitem_vertical'); });
     //  Find listitems and dividers.
     data.listitems = [];
     data.dividers = [];
@@ -279,8 +287,8 @@ var initNoResultsMsg = function (wrapper) {
     wrapper.append(message);
 };
 Mmenu.prototype.search = function (input, query) {
-    var _this = this;
     var _a;
+    var _this = this;
     var options = this.opts.searchfield, configs = this.conf.searchfield;
     query = query || '' + input.value;
     query = query.toLowerCase().trim();
@@ -405,7 +413,7 @@ Mmenu.prototype.search = function (input, query) {
             }
             //	Update parent for sub-panel
             //  .reverse() mutates the original array, therefor we "clone" it first using [...panels].
-            panels.slice().reverse().forEach(function (panel, p) {
+            __spreadArrays(panels).reverse().forEach(function (panel, p) {
                 var parent = panel['mmParent'];
                 if (parent) {
                     //	The current panel has mached listitems
@@ -428,6 +436,18 @@ Mmenu.prototype.search = function (input, query) {
                         parent.classList.add('mm-listitem_nosubitems');
                     }
                 }
+            });
+            //	Show parent panels of vertical submenus
+            panels.forEach(function (panel) {
+                var listitems = DOM.find(panel, '.mm-listitem');
+                DOM.filterLI(listitems).forEach(function (listitem) {
+                    DOM.parents(listitem, '.mm-listitem_vertical').forEach(function (parent) {
+                        if (parent.matches('.mm-hidden')) {
+                            parent.classList.remove('mm-hidden');
+                            parent.classList.add('mm-listitem_onlysubitems');
+                        }
+                    });
+                });
             });
             //	Show first preceeding divider of parent
             panels.forEach(function (panel) {
