@@ -6,7 +6,8 @@
 
 plugin.tx_lab81basetheme.view {
     partialRootPaths {
-        10 = EXT:lab81basetheme/Resources/Private/Partials
+        10 = EXT:lab81clienttheme/Resources/Private/Partials
+        11 = EXT:lab81basetheme/Resources/Private/Partials
         20 = EXT:t3sbootstrap/Resources/Private/Partials
     }
 }

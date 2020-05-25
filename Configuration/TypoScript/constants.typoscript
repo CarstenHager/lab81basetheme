@@ -51,7 +51,7 @@ bootstrap {
         # Info (detail view): zeigt Info (Datum, Kategorie, Tags, Autor) in Detail-Ansicht.
         news.detail.info = 1
         # Image ratio (list view): z.B.: 16:9, 4:3 - oder 0.
-        news.detail.imageRatio = 4:3
+        news.detail.imageRatio = 16:9
         # Lightbox (detail view): aktivieren für Detail-Ansicht.
         news.detail.enableLightbox = 1
         # Utility class für den "back-button" in der Detail-Ansicht.
@@ -96,7 +96,7 @@ plugin {
 
     ##################################
     # Partials von der EXT t3sbootstrap überschreiben
-    tx_t3sbootstrap.view.partialRootPath = EXT:lab81basetheme/Resources/Private/Extensions/t3sbootstrap/Partials/
+    #tx_t3sbootstrap.view.partialRootPath = EXT:lab81basetheme/Resources/Private/Extensions/t3sbootstrap/Partials/
 
     ##################################
     # Templates von der EXT News überschreiben
@@ -114,8 +114,8 @@ plugin {
     # Einstellungen CSSEO
     tx_csseo {
         social {
-            defaultImage = /fileadmin/social_media/facebook.jpg
-            twitter.defaultImage = /fileadmin/social_media/twitter.jpg
+            defaultImage = /fileadmin/Lab81/social_media/facebook.jpg
+            twitter.defaultImage = /fileadmin/Lab81/social_media/twitter.jpg
         }
     }
 
