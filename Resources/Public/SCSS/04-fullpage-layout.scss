@@ -28,3 +28,13 @@
     content: "\f077"; /* fa-chevron-up */
   }
 }
+
+.breadcrumb {
+  background-color: inherit;
+}
+.breadcrumb-bottom {
+  .breadcrumb {
+    margin-bottom: 0;
+  }
+}
+
