@@ -1,7 +1,6 @@
 <?php
 
 use TYPO3\CMS\Core\Log\LogLevel;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
 defined('TYPO3') || die();
 
@@ -13,7 +12,7 @@ defined('TYPO3') || die();
 /***************
  * PageTS
  */
-ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lab81basetheme/Configuration/TsConfig/Page/All.tsconfig">');
+TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lab81basetheme/Configuration/TsConfig/Page/All.tsconfig">');
 
 /***************
  * Deprecation Log deaktivieren
