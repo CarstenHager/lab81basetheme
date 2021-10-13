@@ -1,0 +1,12 @@
+##################################
+## Alle Dateien aus dem Verzeichnis laden
+## Sortierung erfolgt alphabetisch nach Dateiname
+##################################
+@import 'EXT:lab81basetheme/Configuration/TypoScript/Library/'
+
+plugin.tx_lab81basetheme.view {
+    partialRootPaths {
+        10 = EXT:lab81basetheme/Resources/Private/Partials
+        20 = EXT:t3sbootstrap/Resources/Private/Partials
+    }
+}

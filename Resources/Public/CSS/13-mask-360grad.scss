@@ -1,0 +1,58 @@
+// ##############
+// 360 Grad Image
+
+#panorama {
+  .rundgang-link{
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+
+    .btn {
+      font-size: 30px;
+      line-height: 50px;
+      padding: 0 10px;
+      letter-spacing: normal;
+      color: white;
+      border: 2px solid white;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .btn:hover {
+      color: #a0191d !important;
+      border-color: #a0191d !important;
+      outline: none;
+    }
+  }
+
+  .scroll-down {
+    z-index: 2;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+
+    .btn {
+      font-size: 30px;
+      line-height: 50px;
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      letter-spacing: normal;
+      color: white;
+      border: 2px solid white;
+      border-radius: 100% !important;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+
+    .btn:hover {
+
+    }
+  }
+}
+

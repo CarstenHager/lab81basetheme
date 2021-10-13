@@ -1,0 +1,110 @@
+##################################
+# Eigene Cookie Consent Lösung
+##################################
+
+[{$plugin.lab81basetheme.config.cookie_tool} > 0]
+
+    ##################################
+    # t3sbootstrap Cookie Settings löschen
+    page.jsInline.5 >
+
+    ##################################
+    # CookieConsent JS und CSS von der EXT t3sbootstrap laden
+    #page.includeJSFooter.cookieconsent = EXT:t3sbootstrap/Resources/Public/Contrib/Cookieconsent/cookieconsent.min.js
+    #page.includeCSS.cookieconsent = EXT:t3sbootstrap/Resources/Public/Contrib/Cookieconsent/cookieconsent.min.css
+
+    ##################################
+    # t3sbootstrap Cookie Settings überschreiben
+    page.footerData {
+
+        # Cookie Consent
+        40 = TEXT
+        40.value (
+            <script>
+
+                var _paq = _paq || [];
+                _paq.push(['requireConsent']);
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+
+                window.addEventListener("load", function(){
+                    window.cookieconsent.initialise({
+                        "palette": {
+                            "popup": {
+                                "background": "{$bootstrap.cookieconsent.popup.background}",
+                                "text": "{$bootstrap.cookieconsent.popup.text}"
+                            },
+                            "button": {
+                                "background": "{$bootstrap.cookieconsent.button.background}",
+                                "text": "{$bootstrap.cookieconsent.button.text}"
+                            }
+                        },
+                        "theme": "{$bootstrap.cookieconsent.theme}",
+                        "type": "{$bootstrap.cookieconsent.type}",
+                        "revokeBtn": "<div class='cc-revoke {{classes}}'>Cookie Optionen</div>",
+                        "content": {
+                            "message": "{$bootstrap.cookieconsent.message}",
+                            "dismiss": "{$bootstrap.cookieconsent.dismiss}",
+                            "allow": "{$bootstrap.cookieconsent.allow}",
+                            "link": "{$bootstrap.cookieconsent.link}",
+                            "deny": "{$bootstrap.cookieconsent.deny}",
+                            "href": "{$bootstrap.cookieconsent.href}"
+                        },
+
+                        onInitialise: function (status) {
+                            var type = this.options.type;
+                            var didConsent = this.hasConsented();
+                            if (type == 'opt-in' && didConsent) {
+                                console.log('onInitialise in - begin' );
+                                console.log(type );
+                                console.log(didConsent);
+                                console.log('onInitialise in - end' );
+                                _paq.push(['rememberConsentGiven']);
+                                (function() {
+                                    var u="//piwik.lab81.de/";
+                                    _paq.push(['setTrackerUrl', u+'js/']);
+                                    _paq.push(['setSiteId', '{$plugin.lab81basetheme.config.piwik}']);
+                                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
+                                })();
+                            }
+                            if (type == 'opt-in' && !didConsent) {
+                                console.log('onInitialise out - begin' );
+                                console.log(type );
+                                console.log(didConsent);
+                                console.log('onInitialise out - end' );
+                                _paq.push(['forgetConsentGiven']);
+                            }
+                        },
+
+                        onStatusChange: function(status, chosenBefore) {
+                            var type = this.options.type;
+                            var didConsent = this.hasConsented();
+                            if (type == 'opt-in' && didConsent) {
+                                console.log('onStatusChange in - begin' );
+                                console.log(type );
+                                console.log(didConsent);
+                                console.log('onStatusChange in - end' );
+                                _paq.push(['rememberConsentGiven']);
+                                (function() {
+                                    var u="//piwik.lab81.de/";
+                                    _paq.push(['setTrackerUrl', u+'js/']);
+                                    _paq.push(['setSiteId', '{$plugin.lab81basetheme.config.piwik}']);
+                                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'js/'; s.parentNode.insertBefore(g,s);
+                                })();
+                            }
+                            if (type == 'opt-in' && !didConsent) {
+                                console.log('onStatusChange out - begin' );
+                                console.log(type );
+                                console.log(didConsent);
+                                console.log('onStatusChange out - end' );
+                                _paq.push(['forgetConsentGiven']);
+                            }
+                        },
+                    })
+                });
+            </script>
+        )
+    }
+[end]

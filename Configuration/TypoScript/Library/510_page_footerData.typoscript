@@ -1,0 +1,6 @@
+##################################
+# Allgemeines JS
+##################################
+page.includeJSFooter {
+#    custombase =   EXT:lab81basetheme/Resources/Public/JavaScript/scripts.js
+}

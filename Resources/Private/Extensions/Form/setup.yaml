@@ -1,0 +1,11 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateVariant: version2
+                partialRootPaths:
+                  100: 'EXT:lab81basetheme/Resources/Private/Extensions/Form/Partials/'

@@ -1,0 +1,53 @@
+##################################
+# Page Header Date
+##################################
+page {
+
+    ##################################
+    # Favicon
+    shortcutIcon = <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+
+    headerData {
+        ##################################
+        # Google Verfication Code
+        10 = TEXT
+        10.value = <meta name="google-site-verification" content="Y3Vrx2WuzSMFUfXzcZsDUIiCdZ06XIzXHM89vdMV0DM" />
+
+        ##################################
+        # Favicons für verschiedene Geräte
+        # Icon über https://realfavicongenerator.net/ erzeugen
+        20 = TEXT
+        20.value (
+            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+            <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+            <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+            <link rel="manifest" href="/manifest.json">
+            <link rel="mask-icon" href="/safari-pinned-tab.svg">
+            <meta name="theme-color" content="#ffffff">
+        )
+
+        ##################################
+        # Font Awesome Preload
+#        220 = TEXT
+#        220.value = <link rel="preload" href="/fileadmin/T3SB/FA5Pro/webfonts/fa-brands-400.woff2" as="font" crossorigin>
+#
+#        221 = TEXT
+#        221.value = <link rel="preload" href="/fileadmin/T3SB/FA5Pro/webfonts/fa-duotone-900.woff2" as="font" crossorigin>
+#
+#        222 = TEXT
+#        222.value = <link rel="preload" href="/fileadmin/T3SB/FA5Pro/webfonts/fa-light-300.woff2" as="font" crossorigin>
+#
+#        223 = TEXT
+#        223.wrap = <link rel="preload" href="/fileadmin/T3SB/FA5Pro/webfonts/fa-regular-400.woff2" as="font" crossorigin>
+#
+#        224 = TEXT
+#        224.wrap = <link rel="preload" href="/fileadmin/T3SB/FA5Pro/webfonts/fa-solid-900.woff2" as="font" crossorigin>
+
+        ##################################
+        # Google Font Preload
+
+        #300 = TEXT
+        #300.value = <link rel="preload" href="/fileadmin/tx_webfonts/fonts/google_webfonts/source-sans-pro/source-sans-pro-v14-latin-300.woff2" as="font" crossorigin>
+
+    }
+}

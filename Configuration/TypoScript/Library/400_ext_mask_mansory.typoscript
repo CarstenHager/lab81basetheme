@@ -1,0 +1,72 @@
+##################################
+# Mask Element Mansory Bildergalerie
+##################################
+
+##################################
+# Alle Kategorien-Titel eines Bildes in eine Variable schreiben und zusätzlich ein Leerzeichen herum, weil es als CSS Klasse ausgegeben wird
+lib.categoryclass = CONTENT
+lib.categoryclass {
+    table=sys_category
+    wrap=|
+    select {
+        pidInList = root,0,1
+        recursive = 99
+        max=10
+        selectFields=DISTINCT(sys_category.title),sys_category.uid
+        join = sys_category_record_mm on sys_category_record_mm.uid_local = sys_category.uid join sys_file_metadata on sys_file_metadata.uid = sys_category_record_mm.uid_foreign join sys_file_reference on sys_file_reference.uid_local = sys_file_metadata.file
+        where.field = fuid
+        where.wrap = sys_file_reference.uid=|
+    }
+    renderObj=COA
+    renderObj {
+        1=TEXT
+        1.field = title
+        1.noTrimWrap =| |
+    }
+}
+
+##################################
+# Der Kategorie Titel eines Bildes in eine Variable schreiben (hier wird nur die erste Kategorie genommen)
+lib.category = CONTENT
+lib.category {
+    table=sys_category
+    wrap=|
+    select {
+        pidInList = root,0,1
+        recursive = 99
+        max=1
+        selectFields=DISTINCT(sys_category.title),sys_category.uid
+        join = sys_category_record_mm on sys_category_record_mm.uid_local = sys_category.uid join sys_file_metadata on sys_file_metadata.uid = sys_category_record_mm.uid_foreign join sys_file_reference on sys_file_reference.uid_local = sys_file_metadata.file
+        where.field = fuid
+        where.wrap = sys_file_reference.uid=|
+    }
+    renderObj=COA
+    renderObj {
+        1=TEXT
+        1.field = title
+    }
+}
+
+##################################
+# Den Kategorie UID eines Bildes in eine Variable schreiben
+lib.categoryid = CONTENT
+lib.categoryid {
+    table=sys_category
+    wrap=|
+    select {
+        pidInList = root,0,1
+        recursive = 99
+        max=1
+        selectFields=DISTINCT(sys_category.title),sys_category.uid
+        join = sys_category_record_mm on sys_category_record_mm.uid_local = sys_category.uid join sys_file_metadata on sys_file_metadata.uid = sys_category_record_mm.uid_foreign join sys_file_reference on sys_file_reference.uid_local = sys_file_metadata.file
+        where.field = fuid
+        where.wrap = sys_file_reference.uid=|
+    }
+    renderObj=COA
+    renderObj {
+        1=TEXT
+        1.field = uid
+    }
+}
+
+

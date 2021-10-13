@@ -1,0 +1,103 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+  <f:if condition="{data.imageborder} =1 ">
+    <f:then>
+      <div style="background-color:{data.tx_t3sbootstrap_bgcolor}" class="overlay"></div>
+    </f:then>
+  </f:if>
+
+  <f:if condition="{data.media}">
+
+    <video autobuffer autoplay loop muted playsinline  style="background-image: url('/fileadmin{data.image.0.identifier}'); background-size: cover;" class="bg-video"  >
+      <source src="/fileadmin/{data.media.0.identifier}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+      <!--<source src="/fileadmin/user_upload/Videos/bg.webm" type='video/webm; codecs="vp8, vorbis"' />-->
+      <!--<source src="/fileadmin/user_upload/Videos/bg.ogv" type='video/ogg; codecs="theora, vorbis"' />-->
+      Your browser does not support the video tag.
+    </video>
+
+  </f:if>
+
+  <div id="c{data.uid}" class="<f:if condition='{data.tx_t3sbootstrap_extra_class}'>{data.tx_t3sbootstrap_extra_class}</f:if>
+
+    <f:if condition='{data.tx_t3sbootstrap_padding_sides}'>
+      <f:then>
+        <f:if condition='{data.tx_t3sbootstrap_padding_sides} == blank '>
+          <f:then>
+            p-{data.tx_t3sbootstrap_padding_size}
+          </f:then>
+          <f:else>
+            p{data.tx_t3sbootstrap_padding_sides}-{data.tx_t3sbootstrap_padding_size}
+          </f:else>
+        </f:if>
+      </f:then>
+    </f:if>
+
+    <f:if condition='{data.tx_t3sbootstrap_margin_sides}'>
+      <f:then>
+        <f:if condition='{data.tx_t3sbootstrap_margin_sides} == blank '>
+          <f:then>
+            m-{data.tx_t3sbootstrap_margin_size}
+          </f:then>
+          <f:else>
+            m{data.tx_t3sbootstrap_margin_sides}-{data.tx_t3sbootstrap_margin_size}
+          </f:else>
+        </f:if>
+      </f:then>
+    </f:if>      ">
+
+    <div class="{data.tx_t3sbootstrap_container}">
+
+      <f:if condition="{data.image}">
+        <f:then>
+          <header style="background-image:url('/fileadmin{data.image.0.identifier}')" class="masthead align-items-center text-center {f:if(condition: data.tx_t3sbootstrap_textcolor, then: 'text-{data.tx_t3sbootstrap_textcolor}', else: 'text-white')} d-flex">
+        </f:then>
+        <f:else>
+          <header class="masthead align-items-center text-center {f:if(condition: data.tx_t3sbootstrap_textcolor, then: 'text-{data.tx_t3sbootstrap_textcolor}', else: 'text-white')} d-flex">
+        </f:else>
+      </f:if>
+
+        <div style="z-index: 2;" class="container my-auto align-items-center">
+          <div  class="row">
+            <div class="col-lg-10 mx-auto">
+              <h1 class="text-uppercase">
+                <strong><f:if condition="{data.header}">{data.header}</f:if></strong>
+              </h1>
+              <hr>
+            </div>
+            <div class="col-lg-8 mx-auto">
+              <f:if condition="{data.bodytext}"><f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html></f:if>
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="z-index: 2;" class="scroll-down d-none d-md-block">
+          <a class="btn js-scroll js-scroll-trigger" href="#page-content">
+            <i class="fa fa-angle-down fa-fw"></i>
+          </a>
+        </div>
+      </header>
+
+    </div>
+  </div>
+
+  <f:if condition="{data.media}">
+    <f:asset.script identifier="background100v">
+      (function($) {
+
+      <!-- Chrome autoplay Bug  -->
+      var promise = document.querySelector('video').play();
+      if (promise !== undefined) {
+      promise.then(_ => {
+      // Autoplay funktioniert!
+      }).catch(error => {
+      // Autoplay wurde unterbunden.
+      });
+      }
+
+      })(jQuery);
+    </f:asset.script>
+  </f:if>
+
+</html>

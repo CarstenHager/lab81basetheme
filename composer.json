@@ -1,0 +1,28 @@
+{
+    "name": "lab81-medienagentur/lab81basetheme",
+    "type": "typo3-cms-extension",
+    "description": "Grundlegene Einstellungen f\u00fcr alle Webseiten unsere Kunden",
+    "homepage": "https://www.lab81.de",
+    "license": [
+        "GPL-2.0-or-later"
+    ],
+    "keywords": [
+        "TYPO3 CMS"
+    ],
+    "require": {
+        "typo3/cms-core": "^10.4.18 || ^11.5",
+        "typo3/cms-rte-ckeditor": "^10.4.18 || ^11.5",
+        "typo3/cms-fluid-styled-content": "^10.4.18 || ^11.5",
+        "t3sbs/t3sbootstrap": "^5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lab81Medienagentur\\Lab81basetheme\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "lab81basetheme"
+        }
+    }
+}

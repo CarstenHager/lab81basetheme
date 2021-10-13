@@ -1,0 +1,10 @@
+#
+# PageTS for lab81basetheme
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lab81basetheme/Configuration/TsConfig/Page/MOD.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lab81basetheme/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lab81basetheme/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lab81basetheme/Configuration/TsConfig/Page/News.tsconfig">
+
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lab81basetheme/Configuration/TsConfig/Page/RTE.tsconfig">
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:lab81basetheme/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">

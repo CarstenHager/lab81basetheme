@@ -1,0 +1,30 @@
+##################################
+# Web -> Info -> Eigene Felder definieren
+##################################
+mod.web_info.fieldDefinitions{
+	3 {
+		label = Facebook OG
+		fields = title,uid,og_title,og_description,og_image
+	}
+    4 {
+        label = Twitter
+        fields = title,uid,twitter_title,twitter_description,twitter_image
+    }
+    5 {
+        label = SEO Allgemein
+        fields = title,uid,description,author,author_email,lastUpdated,keywords,abstract
+    }
+    6 {
+        label = URL Einstellungen
+        fields = title,uid,slug,nav_title,subtitle
+    }
+}
+
+##################################
+# Zwischenablage und Erweiterte Ansicht automatisch aktivieren
+##################################
+mod.web_list{
+    enableDisplayBigControlPanel = activated
+    enableClipBoard = activated
+}
+

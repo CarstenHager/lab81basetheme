@@ -1,0 +1,32 @@
+// Links im Footer mit Border versehen
+.footer-links {
+  ul li {
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid #626060;
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+}
+
+
+// Kontaktformular
+.ce-form_formframework {
+  .form-group {
+    margin-bottom: 1rem;
+    > .control-label {
+      margin-bottom: 0.5rem;
+    }
+    .input.checkbox {
+      .form-check {
+        padding-left: 0;
+
+        span {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
+

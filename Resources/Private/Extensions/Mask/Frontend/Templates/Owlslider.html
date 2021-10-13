@@ -1,0 +1,88 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:t3sb="http://typo3.org/ns/T3SBS/T3sbootstrap/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+  <div id="c{data.uid}" class="<f:if condition='{data.tx_t3sbootstrap_extra_class}'>{data.tx_t3sbootstrap_extra_class}</f:if>
+
+    <f:if condition='{data.tx_t3sbootstrap_padding_sides}'>
+      <f:then>
+        <f:if condition='{data.tx_t3sbootstrap_padding_sides} == blank '>
+          <f:then>
+            p-{data.tx_t3sbootstrap_padding_size}
+          </f:then>
+          <f:else>
+            p{data.tx_t3sbootstrap_padding_sides}-{data.tx_t3sbootstrap_padding_size}
+          </f:else>
+        </f:if>
+      </f:then>
+    </f:if>
+
+    <f:if condition='{data.tx_t3sbootstrap_margin_sides}'>
+      <f:then>
+        <f:if condition='{data.tx_t3sbootstrap_margin_sides} == blank '>
+          <f:then>
+            m-{data.tx_t3sbootstrap_margin_size}
+          </f:then>
+          <f:else>
+            m{data.tx_t3sbootstrap_margin_sides}-{data.tx_t3sbootstrap_margin_size}
+          </f:else>
+        </f:if>
+      </f:then>
+    </f:if>      ">
+
+    <div class="{data.tx_t3sbootstrap_container}">
+
+      <div class="owl-carousel owl-theme owl{data.uid}">
+
+        <f:if condition="{data.tx_mask_owl_content}">
+          <f:then>
+
+            <f:if condition="{data.tx_mask_owl_content}">
+              <f:for each="{data.tx_mask_owl_content}" as="data_item">
+                <f:cObject typoscriptObjectPath="lib.tx_mask.content">{data_item.uid}</f:cObject>
+              </f:for>
+            </f:if>
+
+          </f:then>
+
+          <f:else>
+            <f:for each="{data.image}" as="file">
+
+              <t3sb:media file="{file}"
+                          title="{file.title}"
+                          alt="{f:if(condition: file.alternative, then: '{file.alternative}', else: 'image-{file.uid}')}"
+                          class="{addmedia.imgclass}{f:if(condition: file.properties.tx_t3sbootstrap_extra_imgclass, then: ' {file.properties.tx_t3sbootstrap_extra_imgclass}')}{f:if(condition: '{file.properties.tx_t3sbootstrap_lazy_load} && {settings.lazyLoad} == 2', then: ' lazy')}"
+                          width="{data.imagewidth}" height="{data.imageheight}" breakpoints="{
+			              0: {'cropVariant': 'default', 'media': '(min-width: 1200px)', 'srcset': '255, 385, 540, 768, 992, 1200'},
+			              1: {'cropVariant': 'tablet', 'media': '(min-width: 576px)', 'srcset': '385, 576, 768, 992, 1200'},
+			              2: {'cropVariant': 'mobile', 'media': '(max-width: 575px)', 'srcset': '60, 100, 200, 385, 575'}
+		                  }" picturefill="{settings.picturefill}" lazyload="{data.tx_t3sbootstrap_lazy_load}" ratio="{data.tx_t3sbootstrap_image_ratio}" />
+
+            </f:for>
+
+          </f:else>
+        </f:if>
+
+      </div>
+
+    </div>
+  </div>
+
+</html>
+
+<f:asset.css identifier="owlslidercss1" href="EXT:lab81basetheme/Resources/Public/Contrib/OwlCarousel/dist/assets/owl.carousel.min.css" />
+<f:asset.css identifier="owlslidercss2" href="EXT:lab81basetheme/Resources/Public/Contrib/OwlCarousel/dist/assets/owl.theme.default.min.css" />
+<f:asset.css identifier="owlslidercss3" href="EXT:lab81basetheme/Resources/Public/CSS/10-mask-owlslider.css" />
+
+<f:asset.script identifier="owlsliderjs1" src="EXT:lab81basetheme/Resources/Public/Contrib/OwlCarousel/dist/owl.carousel.min.js" />
+<f:asset.script identifier="owlsilderjsinline">
+  (function($) {
+
+  $('.owl{data.uid}').owlCarousel({
+  <f:format.raw>{data.tx_mask_owljscode}</f:format.raw>
+  });
+
+  })(jQuery);
+</f:asset.script>
+

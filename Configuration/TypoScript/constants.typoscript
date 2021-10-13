@@ -1,0 +1,141 @@
+##################################
+# Konstanten von lab81_configuration
+##################################
+
+plugin.lab81basetheme {
+    # customsubcategory=config=Grundkonfiguration
+    # cat=lab81basetheme/config/10; type=boolean; label=Admin Panel aktivieren
+    admPanel = 0
+    # cat=lab81basetheme/config/11; type=boolean; label=Debug Einstellungen aktivieren / CSS und JS nicht komprimierung / EXT min deaktiviert / ExceptionHandler einschalten
+    config.debug = 1
+    # cat=lab81basetheme/config/12; type=boolean; label=Seite auf NoIndex stellen
+    config.noindex = 1
+    # cat=lab81basetheme/config/13; type=boolean; label=Cookie Warnung mit Matomo einblenden - CookieConsent von t3sbootstrap aktivieren!!
+    config.cookie_tool = 0
+    # cat=lab81basetheme/config/14; type=int; label=Piwik ID
+    config.piwik = 0
+    #cat=lab81basetheme/config/20; type=boolean; label=EXT News
+    config.news = 0
+}
+
+##################################
+# Konstanten von t3sbootstrap
+##################################
+
+bootstrap {
+
+    disable{
+        jquery = 1
+    }
+
+    cdn{
+        enable = 0
+    }
+
+    image {
+        picturefill = 0
+    }
+
+    ext {
+        # Extension news
+        ################
+        # Info (list view): zeigt Info (Datum, Kategorien) in List-Ansicht.
+        news.list.info = 1
+        # Image ratio (list view): z.B.: 16:9, 4:3 - oder 0.
+        news.list.imageRatio = 4:3
+        # Utility class für den "more-button" in der List-Ansicht.
+        news.list.buttonClass = primary
+        # Image mobile overlay (list view): wenn < 576px nur für Card-Templates.
+        news.list.imageOverlay = 1
+        # Loading Spinner Position (list view): with ajax pagination.
+        news.list.loadingSpinnerPosition = top
+        # Info (detail view): zeigt Info (Datum, Kategorie, Tags, Autor) in Detail-Ansicht.
+        news.detail.info = 1
+        # Image ratio (list view): z.B.: 16:9, 4:3 - oder 0.
+        news.detail.imageRatio = 16:9
+        # Lightbox (detail view): aktivieren für Detail-Ansicht.
+        news.detail.enableLightbox = 1
+        # Utility class für den "back-button" in der Detail-Ansicht.
+        news.detail.buttonClass = primary
+        # Teaser class (detail view): z.B.: "lead" oder jede andere.
+        news.detail.teaserClass = lead
+        # Carousel (detail view): zeigt Bilder im Carousel, wenn aktiviert und mehr als ein Bild.
+        news.detail.carousel = 1
+        # Breite für linke Spalte (detail view):
+        news.detail.leftGrid = 7
+        # Media oben (detail view): zeigt Bild oder Video oben, über dem Text.
+        news.detail.mediaOnTop = 0
+    }
+
+    config {
+        pageContentExtraClass = py-4
+        globalPaddingTop = 0
+    }
+
+    navbar {
+        image {
+            height = 30
+            width = 30
+            altText = Company Logo
+        }
+    }
+}
+
+##################################
+# Konstanten von restlichen EXT
+##################################
+plugin {
+
+    ##################################
+    # Button CSS Klassen anpassen
+    tx_skvideo {
+        settings.cancelbutton_additionalclass = btn btn-danger
+        settings.continuebutton_additionalclass = btn btn-success
+    }
+    ##################################
+    # Partials von der EXT t3sbootstrap überschreiben
+    tx_t3sbootstrap.view.partialRootPath = EXT:lab81basetheme/Resources/Private/Extensions/t3sbootstrap/Partials/
+
+    ##################################
+    # Templates von der EXT News überschreiben
+    #tx_news.view.templateRootPath = EXT:lab81basetheme/Resources/Private/Extensions/News/Templates/
+    #tx_news.view.partialRootPath = EXT:lab81basetheme/Resources/Private/Extensions/News/Partials/
+
+    ##################################
+    # Einstellungen Indexdsearch
+    tx_indexedsearch {
+        settings.targetPid = 26
+        settings.rootPidList = 1
+    }
+
+    ##################################
+    # Einstellungen CSSEO
+    tx_csseo {
+        social {
+            defaultImage = /fileadmin/Lab81/social_media/facebook.jpg
+            twitter.defaultImage = /fileadmin/Lab81/social_media/twitter.jpg
+        }
+    }
+
+    ##################################
+    # Detailansicht für NewsSitemap
+    tx_news {
+        settings.sitemap.detailPid = 28
+    }
+
+    ##################################
+    # RSS Feed für tx_news
+    tx_news.rss.channel {
+        title = News Feed Titel
+        description = Mein RSS Feed der Seite Vorlage p208592
+        link = https://p208592.mittwaldserver.info
+        language = de-DE
+        copyright = TYPO3 News
+        category =
+        generator = TYPO3 EXT:news
+    }
+}
+
+##################################
+# Speicherseite CSSEO
+module.tx_csseo_mod1.persistence.storagePid = 12

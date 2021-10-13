@@ -1,0 +1,42 @@
+###################################
+## Allgemeines CSS
+###################################
+page.includeCSS{
+
+    ##################################
+    # Fontawesome über SASS einbinden ( JS Einbindung von EXT:t3s deaktivieren in 300_ext_t3sbootstrap.typoscript )
+    t3sfontawesomeProLink = <
+    t3sfontawesomeProLink = EXT:lab81basetheme/Resources/Public/SCSS/01_fontawesomeprolinks.scss
+    t3sfontawesomeProLink.if {
+        value = 2
+        equals = {$bootstrap.extconf.fontawesomeCss}
+    }
+
+    t3sfontawesomeLink = <
+    t3sfontawesomeLink = EXT:lab81basetheme/Resources/Public/SCSS/01_fontawesomelinks.scss
+    t3sfontawesomeLink.if {
+        value = 1
+        equals = {$bootstrap.extconf.fontawesomeCss}
+    }
+
+    ##################################
+    # Google Webfonts
+    #tx_webfonts__source-sans-pro = fileadmin/tx_webfonts/fonts/google_webfonts/source-sans-pro/import.css
+
+    ##################################
+    # CSS Anpassungen von Lab81
+    02menu = EXT:lab81basetheme/Resources/Public/SCSS/02-menue.scss
+    03typo = EXT:lab81basetheme/Resources/Public/SCSS/03-typography.scss
+    04layout = EXT:lab81basetheme/Resources/Public/SCSS/04-fullpage-layout.scss
+    05ext = EXT:lab81basetheme/Resources/Public/SCSS/05-extensions.scss
+    05extskvideo = EXT:lab81basetheme/Resources/Public/SCSS/05-ext-skvideo.scss
+    05extnews = EXT:lab81basetheme/Resources/Public/SCSS/05-ext-news.scss
+    06media = EXT:lab81basetheme/Resources/Public/SCSS/06-media-queries.scss
+
+    ##################################
+    # Mask Elemente
+    15cta = EXT:lab81basetheme/Resources/Public/SCSS/15-calltoaction.scss
+
+}
+
+

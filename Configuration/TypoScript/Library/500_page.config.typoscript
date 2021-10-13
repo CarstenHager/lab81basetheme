@@ -1,0 +1,53 @@
+##################################
+# Page config
+##################################
+page {
+	fluidtemplate {
+		layoutRootPath = EXT:lab81basetheme/Resources/Private/Layouts/Page/
+		partialRootPath = EXT:lab81basetheme/Resources/Private/Partials/Page/
+		templateRootPath = EXT:lab81basetheme/Resources/Private/Templates/Page/
+	}
+	##################################
+	# Meta Tags
+	##################################
+	meta {
+		robots = INDEX,FOLLOW
+		apple-mobile-web-app-capable = no
+		compatible = IE=edge
+	}
+}
+
+config{
+
+	##################################
+	#Header Kommentar
+	headerComment = build by lab81.de
+
+	##################################
+	#Spam-Schutz
+	#	spamProtectEmailAddresses = 2
+	#	spamProtectEmailAddresses_atSubst = (at)
+
+	##################################
+	# Cache Einstellungen | 31536000 = 1 Jahr
+	cache_clearAtMidnight = 1
+	cache_period = 86400
+	sendCacheHeaders = 1
+
+	##################################
+	# zusätzliche Header Einstellungen
+	additionalHeaders {
+		10.header = strict-transport-security:max-age=31536000; includeSubdomains
+		20.header = X-Powered-By: lab81 medienagentur
+		30.header = X-Frame-Options: DENY
+		40.header = X-XSS-Protection: 1; mode=block
+		50.header = Referrer-Policy: strict-origin
+		60.header = Permissions-Policy: geolocation=(), midi=(), camera=(), usb=(), magnetometer=(), accelerometer=(), vr=(), speaker=(), ambient-light-sensor=(), gyroscope=(), microphone=()
+		70.header = Content-Security-Policy: frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+		80.header = Server: geht dich nichts an
+		90.header = X-Robots-Tag:index
+	}
+}
+
+
+

@@ -1,0 +1,7 @@
+#plugin.tx_form {
+#    settings {
+#        yamlConfigurations {
+#            100 = EXT:lab81basetheme/Resources/Private/Extensions/Form/setup.yaml
+#        }
+#    }
+#}

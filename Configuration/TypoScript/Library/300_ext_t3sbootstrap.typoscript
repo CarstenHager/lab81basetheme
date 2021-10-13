@@ -1,0 +1,16 @@
+[T3SBS\T3sbootstrap\UserFunction\CookieCondition Opt-In-Allow]
+
+    // enable cookies (tracking-code) - type: opt-in, status: allow
+
+[global]
+
+
+[T3SBS\T3sbootstrap\UserFunction\CookieCondition Opt-Out-Deny]
+
+    // disable cookies (tracking-code) - type: opt-out, status: deny
+
+[global]
+
+# FONTAWESOME JS deaktivieren
+page.footerData.61 = <
+page.footerData.62 = <

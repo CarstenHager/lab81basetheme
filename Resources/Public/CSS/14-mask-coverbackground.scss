@@ -1,0 +1,126 @@
+video::poster {
+  background-size: cover;
+}
+
+.bg-video {
+  object-fit: cover;
+  width: 100vw;
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  top:0;
+  padding-top: 80px;
+}
+_:-ms-lang(x), .bg-video { width: auto } /* IE11 */
+
+#main-navbar.shrink {
+  background-color: #fff;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  background-position: center center;
+  background-size: cover;
+
+  hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-weight: 300;
+  }
+}
+
+// ########################
+
+@media (min-width: 768px) {
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+
+  .bg-video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 0;
+  }
+  _:-ms-lang(x), .bg-video { width: auto } /* IE11 */
+
+  .navbar.shrink{
+    box-shadow: none;
+  }
+
+  #main-navbar.shrink {
+    padding: 1rem 1rem;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  header.masthead {
+
+    height: 100vh;
+    min-height: 650px;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+
+      .btn {
+        font-size: 30px;
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        letter-spacing: normal;
+        color: white;
+        border: 2px solid white;
+        border-radius: 100% !important;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+
+    }
+  }
+
+}
+
+
+
+
+// ########################
+
+@media (min-width: 992px) {
+
+}
+
+
+// ########################
+
+@media (min-width: 1200px) {
+  header.masthead h1 {
+    font-size: 4rem;
+  }
+}
+
+
+
+

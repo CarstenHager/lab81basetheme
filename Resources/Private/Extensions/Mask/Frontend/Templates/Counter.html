@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <div class="counter{data.uid} text-center">
+
+        <f:if condition="{data.tx_t3sbootstrap_header_fontawesome}">
+            <i class="{data.tx_t3sbootstrap_header_fontawesome} fa-2x"></i>
+        </f:if>
+
+        <p class="timer count-title count-number" data-to="{data.subheader}">0</p>
+
+        <f:if condition="{data.header}">
+            <p class="count-text ">{data.header}</p>
+        </f:if>
+
+    </div>
+
+    <f:asset.script identifier="counterjs-{data.uid}">
+
+        var a = 0;
+        var time = {data.table_caption}
+        $(window).scroll(function() {
+
+            var oTop = $('.counter{data.uid}').offset().top - window.innerHeight;
+            if (a == 0 && $(window).scrollTop() > oTop) {
+                $('.count-number').each(function() {
+                    var $this = $(this),
+                    countTo = $this.attr('data-to');
+                    $({
+                        countNum: $this.text()
+                    }).animate({
+                        countNum: countTo
+                    },
+                    {
+                        duration: time,
+                        easing: 'swing',
+                        step: function() {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $this.text(this.countNum);
+                            //alert('finished');
+                        }
+                    });
+                });
+                a = 1;
+            }
+        });
+
+    </f:asset.script>
+
+</html>

@@ -1,0 +1,64 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+
+  <div id="c{data.uid}" class="<f:if condition='{data.tx_t3sbootstrap_extra_class}'>{data.tx_t3sbootstrap_extra_class}</f:if>">
+    <div class="{data.tx_t3sbootstrap_container}">
+      <div class="embed-responsive embed-responsive-21by9">
+        <div class="embed-responsive-item" id="panorama">
+
+              <f:if condition="{data.header_link}">
+              <div class="rundgang-link">
+                <f:link.typolink parameter="{data.header_link}" class="btn" target="_blank"><i class="far fa-play-circle"></i> Tour starten</f:link.typolink>
+              </div>
+            </f:if>
+
+            <div class="scroll-down d-none d-md-block">
+              <a class="btn btn-default js-scroll" href="#page-content">
+                <i class="fa fa-angle-down fa-fw"></i>
+              </a>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <v:asset.script name="panoimagejs" standalone="0" content="footer" dependencies="jquery" path="" />
+
+  <v:asset.script name="panoimageinline{data.uid}" dependencies="jquery,panoimagejs" fluid="TRUE">
+
+
+
+  </v:asset.script>
+
+</html>
+
+
+<f:asset.css identifier="pannellumcss1" href="EXT:lab81basetheme/Resources/Public/Contrib/pannellum/pannellum.css" />
+<f:asset.css identifier="pannellumcss1" href="EXT:lab81basetheme/Resources/Public/CSS/13-mask-360grad.scss" />
+
+<f:asset.script identifier="pannellumjs1" src="EXT:lab81basetheme/Resources/Public/Contrib/pannellum/pannellum.js" />
+<f:asset.script identifier="pannellumjs2">
+    pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    <f:if condition="{data.header}">"title": "{data.header}",</f:if>
+    <f:if condition="{data.subheader}">"author": "{data.subheader}",</f:if>
+    <f:if condition="{data.accessibility_title}">"previewTitle": "{data.accessibility_title}",</f:if>
+    <f:if condition="{data.accessibility_bypass_text}">"previewAuthor": "{data.accessibility_bypass_text}",</f:if>
+    {f:if(condition: data.imageborder, then: '"compass": true,', else: '')}
+    {f:if(condition: data.image_zoom, then: '"autoLoad": true,', else: '')}
+    {f:if(condition: data.filelink_size, then: '"showZoomCtrl": true,', else: '"showZoomCtrl": false,')}
+    {f:if(condition: data.accessibility_bypass, then: '"showFullscreenCtrl": true,', else: '"showFullscreenCtrl": false,')}
+    <f:if condition="{data.table_caption}">"autoRotate": "{data.table_caption}",</f:if>
+    "panorama": "<f:for each='{data.assets}' as='file'>{f:uri.image(image:'{file}')}</f:for>",
+    "preview": "<f:for each='{data.assets}' as='file'>{f:uri.image(image: '{file}', height:'400c', width:'1240c', treatIdAsReference:1)}</f:for>",
+    "autoRotateInactivityDelay": 1300,
+    "mouseZoom": false,
+    "keyboardZoom": false,
+    "orientationOnByDefault": true
+    });
+</f:asset.script>
+

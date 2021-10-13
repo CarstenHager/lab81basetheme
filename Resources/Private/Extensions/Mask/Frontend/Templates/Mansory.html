@@ -1,0 +1,119 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:t3sb="http://typo3.org/ns/T3SBS/T3sbootstrap/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <!-- Leeres Array erstellen mit VHS!!!! -->
+    <v:variable.set name="conf" value="{0:''}"/>
+
+    <!-- Array mit den Kategoriewerten befüllen -->
+    <f:for each="{data.image}" as="file">
+        <v:variable.set name="conf.<f:cObject typoscriptObjectPath='lib.categoryid' data='{fuid:file.uid}' />" value="<f:cObject typoscriptObjectPath='lib.category' data='{fuid:file.uid}' />"/>
+    </f:for>
+
+    <div id="c{data.uid}">
+
+        <!-- Kategorien ausgeben -->
+        <div class="btn-group mb-3" role="group" aria-label="Basic example">
+
+            <f:if condition="{data.image}">
+                <!-- Der Button "alle" soll immer ausgegeben werden, deshalb vor der Schleife -->
+                <button type="button" data-mixitup-control data-filter="all" class="filter btn btn-secondary">Alle</button>
+
+                <!--Eine Schleife die das Array durchläuft und die Kategorien ausgibt-->
+                <f:for each="{conf}" as="kategorie" key="itemkey" reverse="false" iteration="iterator">
+                    <f:if condition="{iterator.index} > 0">
+                        <button type="button" data-mixitup-control data-filter=".{kategorie}" class="filter btn btn-secondary">{kategorie}</button>
+                    </f:if>
+                </f:for>
+
+            </f:if>
+        </div>
+
+        <!--Hier werden zusätzliche Buttons erzeugt - optional-->
+        <div class="ml-3 btn-group mb-3" role="group" aria-label="Basic example">
+
+            <button type="button" data-mixitup-control class="filter btn btn-secondary" data-sort="random">Shuffle</button>
+            <button type="button" data-mixitup-control class="control btn btn-secondary" data-sort="default:asc">Asc</button>
+            <button type="button" data-mixitup-control class="control btn btn-secondary" data-sort="default:desc">Desc</button>
+        </div>
+
+        <!-- Ausgabe der Bilder-->
+
+        <div class="masonry masonry--h portfolio-items image-gallery">
+            <f:for each="{data.image}" as="file">
+
+                <figure class="masonry-brick masonry-link masonry-brick--h mix <f:cObject typoscriptObjectPath='lib.categoryclass' data='{fuid:file.uid}' />"  >
+
+                    <t3sb:media
+                            file="{file}" title="{file.title}" alt="{f:if(condition: file.alternative, then: '{file.alternative}', else: 'image-{file.uid}')}"
+                            class="img-fluid masonry-img {f:if(condition: file.properties.tx_t3sbootstrap_lazy_load, then: ' lazy')}{f:if(condition:'{settings.lazyLoad} == 1',then:' lazy')}"
+                            width="{data.imagewidth}"
+                            height="{data.imageheight}"
+                            breakpoints="{
+                              0: {'cropVariant': 'default', 'media': '(min-width: 1200px)', 'srcset': '255, 385, 540, 768, 992, 1200'},
+                              1: {'cropVariant': 'tablet', 'media': '(min-width: 576px)', 'srcset': '385, 576, 768, 992, 1200'},
+                              2: {'cropVariant': 'mobile', 'media': '(max-width: 575px)', 'srcset': '60, 100, 200, 385, 575'}
+                                }"
+                            picturefill="{settings.picturefill}"
+                            lazyload="{file.properties.tx_t3sbootstrap_lazy_load}"
+                            ratio="{settings.detail.imageRatio}"
+                    />
+
+                </figure>
+
+            </f:for>
+        </div>
+
+
+    </div>
+
+
+
+    <f:section name="image">
+
+
+
+    </f:section>
+
+
+</html>
+
+<f:asset.css identifier="mixitupcss1" href="EXT:lab81basetheme/Resources/Public/CSS/11-mask-masonry.css" />
+
+<f:asset.script identifier="mixitupjs1" src="EXT:lab81basetheme/Resources/Public/Contrib/mixitup/mixitup.min.js" />
+<f:asset.script identifier="mixitupjs2">
+    (function($) {
+
+    <!-- Object Fit Bug IE -->
+    if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+    jQuery('.masonry-img').each(function(){
+    var t = jQuery(this),
+    s = 'url(' + t.attr('src') + ')',
+    p = t.parent(),
+    d = jQuery('<div></div>');
+
+    p.append(d);
+    d.css({
+    'height'                : t.parent().css('height'),
+    'background-size'       : 'cover',
+    'background-repeat'     : 'no-repeat',
+    'background-position'   : '50% 20%',
+    'background-image'      : s
+    });
+    t.hide();
+    });
+    }
+
+    <!-- Initialisierung  -->
+    var containerEl = document.querySelector('.portfolio-items');
+    var mixer = mixitup('.portfolio-items', {
+    selectors: {
+    control: '[data-mixitup-control]'
+    }
+    });
+
+    })(jQuery);
+</f:asset.script>
+
+

@@ -1,0 +1,13 @@
+##################################
+# EXT cs_seo
+##################################
+#plugin.tx_csseo{
+#
+#    ##################################
+#    # Robots Anweisungen komplette abschalten
+#    robots >
+#}
+
+
+
+

@@ -1,0 +1,235 @@
+##################################
+#
+##################################
+TCEFORM {
+    pages {
+    }
+
+    ##################################
+    # Felder aus den einzelnen CE deaktivieren
+    #    tt_content{
+    #
+    #		tx_t3sbootstrap_bgcolor{
+    #            types {
+    #                mask_background100vh.disabled = 0
+    #                mask_mansory.disabled = 1
+    #				mask_360image.disabled = 1
+    #				mask_owlslider.disabled = 1
+    #            }
+    #        }
+    #        tx_t3sbootstrap_contextcolor{
+    #            types {
+    #                mask_background100vh.disabled = 1
+    #				mask_mansory.disabled = 1
+    #				mask_360image.disabled = 1
+    #				mask_owlslider.disabled = 1
+    #            }
+    #        }
+    #        tx_t3sbootstrap_flexform{
+    #            types {
+    #                mask_background100vh.disabled = 1
+    #				mask_mansory.disabled = 1
+    #				mask_360image.disabled = 1
+    #            }
+    #        }
+    #        tx_t3sbootstrap_padding_sides{
+    #            types {
+    #                mask_background100vh.disabled = 1
+    #				mask_360image.disabled = 1
+    #            }
+    #        }
+    #        tx_t3sbootstrap_padding_size{
+    #            types {
+    #                mask_background100vh.disabled = 1
+    #				mask_360image.disabled = 1
+    #            }
+    #        }
+    #        tx_t3sbootstrap_margin_size{
+    #            types {
+    #                mask_background100vh.disabled = 1
+    #				mask_360image.disabled = 1
+    #            }
+    #        }
+    #        tx_t3sbootstrap_margin_sides{
+    #            types {
+    #                mask_background100vh.disabled = 1
+    #				mask_360image.disabled = 1
+    #            }
+    #        }
+    #		tx_t3sbootstrap_textcolor{
+    #			types {
+    #				mask_mansory.disabled = 1
+    #				mask_360image.disabled = 1
+    #				mask_owlslider.disabled = 1
+    #			}
+    #		}
+    #        frame_class{
+    #            types {
+    #                mask_background100vh.disabled = 1
+    #				mask_mansory.disabled = 1
+    #				mask_360image.disabled = 1
+    #				mask_owlslider.disabled = 1
+    #            }
+    #        }
+    #        layout{
+    #            types {
+    #                mask_background100vh.disabled = 1
+    #				mask_mansory.disabled = 1
+    #				mask_360image.disabled = 1
+    #				mask_owlslider.disabled = 1
+    #            }
+    #        }
+    #    }
+
+    ##################################
+    # Default Image cropping
+    sys_file_reference.crop.config.cropVariants {
+        default {
+            title = Desktop
+            selectedRatio = NaN
+            allowedAspectRatios {
+                NaN {
+                    title = Free
+                    value = 0.0
+                }
+                13:4 {
+                    title = 13 / 4  - 2600 / 800
+                    value = 3.25
+                }
+                26:7 {
+                    title = 26 / 7  - 2600 / 700
+                    value = 3.7142857
+                }
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+                13:3 {
+                    title = 13 / 3  - 2600 / 600
+                    value = 4.3333333
+                }
+                26:5 {
+                    title = 26 / 5  - 2600 / 500
+                    value = 5.2
+                }
+                16:9 {
+                    title = 16:9
+                    value = 1.7777777
+                }
+                4:3 {
+                    title = 4:3
+                    value = 1.3333333
+                }
+                3:2 {
+                    title = 3:2
+                    value = 1.5
+                }
+                1:1 {
+                    title = 1:1
+                    value = 1
+                }
+            }
+        }
+        tablet {
+            title = Tablet
+            selectedRatio = NaN
+            allowedAspectRatios {
+                NaN {
+                    title = Free
+                    value = 0.0
+                }
+                13:4 {
+                    title = 13 / 4  - 2600 / 800
+                    value = 3.25
+                }
+                26:7 {
+                    title = 26 / 7  - 2600 / 700
+                    value = 3.7142857
+                }
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+                13:3 {
+                    title = 13 / 3  - 2600 / 600
+                    value = 4.3333333
+                }
+                26:5 {
+                    title = 26 / 5  - 2600 / 500
+                    value = 5.2
+                }
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+                16:9 {
+                    title = 16:9
+                    value = 1.7777777
+                }
+                4:3 {
+                    title = 4:3
+                    value = 1.3333333
+                }
+                3:2 {
+                    title = 3:2
+                    value = 1.5
+                }
+                1:1 {
+                    title = 1:1
+                    value = 1
+                }
+            }
+        }
+        mobile {
+            title = Mobile
+            selectedRatio = NaN
+            allowedAspectRatios {
+                NaN {
+                    title = Free
+                    value = 0.0
+                }
+                13:4 {
+                    title = 13 / 4  - 2600 / 800
+                    value = 3.25
+                }
+                26:7 {
+                    title = 26 / 7  - 2600 / 700
+                    value = 3.7142857
+                }
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+                13:3 {
+                    title = 13 / 3  - 2600 / 600
+                    value = 4.3333333
+                }
+                26:5 {
+                    title = 26 / 5  - 2600 / 500
+                    value = 5.2
+                }
+                21:9 {
+                    title = 21:9
+                    value = 2.3333333
+                }
+                16:9 {
+                    title = 16:9
+                    value = 1.7777777
+                }
+                4:3 {
+                    title = 4:3
+                    value = 1.3333333
+                }
+                3:2 {
+                    title = 3:2
+                    value = 1.5
+                }
+                1:1 {
+                    title = 1:1
+                    value = 1
+                }
+            }
+        }
+    }
+}
+

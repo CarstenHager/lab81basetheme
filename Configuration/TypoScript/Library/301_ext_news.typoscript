@@ -1,0 +1,189 @@
+##################################
+# TS für die EXT News
+##################################
+[{$plugin.lab81basetheme.config.news} > 0]
+
+    ##################################
+    # Sitemap für tx_news
+    ##################################
+    plugin.tx_seo {
+        config {
+            xmlSitemap {
+                sitemaps {
+                    news {
+                        provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                        config {
+                            table = tx_news_domain_model_news
+                            additionalWhere =
+                            sortField = sorting
+                            lastModifiedField = tstamp
+                            changeFreqField = sitemap_changefreq
+                            priorityField = sitemap_priority
+                            pid = 15
+                            recursive = 2
+                            url {
+                                pageId = 28
+                                fieldToParameterMap {
+                                    uid = tx_news_pi1[news]
+                                }
+                                additionalGetParameters {
+                                    tx_news_pi1 {
+                                        controller = News
+                                        action = detail
+                                    }
+                                }
+                                useCacheHash = 1
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    # **********************************************************
+    #	EXT:news Robots: allow indexing of news records, but set ‘noindex’ to the detail page
+    # **********************************************************
+    [traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+        page.meta.robots = index,follow
+        page.meta.robots.replace = 1
+    [global]
+
+
+    # **********************************************************
+    #	EXT:news Template überschreiben
+    # **********************************************************
+    plugin.tx_news {
+
+        view {
+            templateRootPaths {
+                3 = EXT:lab81basetheme/Resources/Private/Extensions/News/Templates/
+            }
+            partialRootPaths {
+                3 = EXT:lab81basetheme/Resources/Private/Extensions/News/Partials/
+            }
+            layoutRootPaths {
+                3 = EXT:lab81basetheme/Resources/Private/Extensions/News/Layouts/
+            }
+        }
+    }
+
+
+    ##################################
+    # Linkhandler URL für News
+    ##################################
+    config.recordLinks.tx_news {
+        typolink {
+            # Detail page
+            parameter = 28
+            additionalParams.data = field:uid
+            # If there is a plugin with mode "Detail", the controller and action parameter might be skipped
+            additionalParams.wrap = &tx_news_pi1[controller]=News&tx_news_pi1[action]=detail&tx_news_pi1[news]=|
+            useCacheHash = 1
+        }
+    }
+
+    ##################################
+    # Vorschau für versteckte News aktivieren @todo
+    ##################################
+    plugin.tx_news{
+
+        settings{
+
+            #Default CSS nicht importieren
+            cssFile =
+
+            #Pagination am Anfang ausblenden
+            list.paginate.insertAbove = 1
+
+            # Default Image Bild ausblenden
+            displayDummyIfNoMedia = 1
+            list.media.dummyImage = typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png
+
+            #geht
+            enablePreviewOfHiddenRecords = 1
+            #geht nicht (sollte aber laut Doku)
+            previewHiddenRecords = 1
+
+            detail.showPrevNext = 1
+        }
+    }
+
+    plugin.tx_news.features.requireCHashArgumentForActionArguments  = 0
+
+    ##################################
+    # RSS Feed für tx_news
+    ##################################
+    [request.getQueryParams()['type'] in [9818]]
+        config {
+            disableAllHeaderCode = 1
+            xhtml_cleaning = none
+            admPanel = 0
+            debug = 0
+            disablePrefixComment = 1
+            metaCharset = utf-8
+            additionalHeaders.10.header = Content-Type:application/rss+xml;charset=utf-8
+            absRefPrefix = {$plugin.tx_news.rss.channel.link}
+            linkVars >
+        }
+
+        pageNewsRSS = PAGE
+        pageNewsRSS {
+            typeNum = 9818
+            10 < tt_content.list.20.news_pi1
+            10 {
+                switchableControllerActions {
+                    News {
+                        1 = list
+                    }
+                }
+                settings < plugin.tx_news.settings
+                settings {
+    #                categories = 9
+                    categoryConjunction = notor
+                    limit = 30
+                    detailPid = 28
+                    startingpoint = 15
+                    format = xml
+                }
+            }
+        }
+    [end]
+
+    ##################################
+    # News der gleichen Kategorie
+    ##################################
+    lib.tx_news.relatedByFirstCategory = USER
+    lib.tx_news.relatedByFirstCategory {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = News
+        pluginName = Pi1
+        vendorName = GeorgRinger
+
+        switchableControllerActions {
+            News {
+                1 = list
+            }
+        }
+
+        settings < plugin.tx_news.settings
+        settings {
+            relatedView = 1
+            detailPid = 28
+            useStdWrap := addToList(categories)
+            categories.current = 1
+            categoryConjunction = or
+            overrideFlexformSettingsIfEmpty := addToList(detailPid)
+            startingpoint = 15
+            templateLayout = 71
+            excludeAlreadyDisplayedNews = 1
+            media.maxWidth = 150
+            orderDirection = desc
+            backPid = 9
+            limit = 5
+            recursive = 5
+            hidePagination = 1
+        }
+    }
+
+[end]

@@ -1,0 +1,30 @@
+.nav-calltoaction {
+  display: flex;
+  position: fixed;
+  right: 0;
+  top: 40%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 17;
+
+  > a {
+    margin-bottom: .5rem;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.34);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.34);
+    width: 9rem;
+    left: 5.5rem;
+    position: absolute;
+    -webkit-transition: left .35s ease-in-out;
+    transition: left .35s ease-in-out;
+    text-align: left;
+    > i {
+      margin-right: 1rem !important;
+    }
+  }
+}
+
+.nav-calltoaction a:hover,
+.nav-calltoaction a:focus {
+  left: 0;
+}

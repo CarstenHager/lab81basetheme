@@ -1,0 +1,99 @@
+##################################
+# Eigentumsverhältnisse von neuen Seiten
+##################################
+TCEMAIN {
+
+    ##################################
+    # Beitzergruppe (ID der Gruppe "Seitenbaumrechte")
+    permissions{
+        groupid = 4
+        # Rechte Besitzer
+        user = show, editcontent , edit , delete , new
+        # Rechte Besitzergruppe
+        group = show, editcontent , edit , delete , new
+        # Rechte "everybody" ( kann ungesetzt bleiben )
+        everybody =
+    }
+
+    ##################################
+    # News aus dem Editor heraus verlinken
+    linkHandler.tx_news {
+        handler = TYPO3\CMS\Recordlist\LinkHandler\RecordLinkHandler
+        # A translatable label can be used with LLL:EXT:theme/locallang.xml:label
+        label = News
+        configuration {
+            table = tx_news_domain_model_news
+            # Default storage pid
+            storagePid = 15
+            # Hide the page tree by setting it to 1
+            hidePageTree = 0
+        }
+        scanAfter = page
+    }
+
+    ##################################
+    # Vorschau einer News ermögliches
+    preview {
+        tx_news_domain_model_news {
+            useCacheHash = 1
+            previewPageId = 28
+            useDefaultLanguageRecord = 0
+            fieldToParameterMap {
+                uid = tx_news_pi1[news_preview]
+            }
+            additionalGetParameters {
+                tx_news_pi1.controller = News
+                tx_news_pi1.action = detail
+            }
+        }
+    }
+
+    table{
+        ##################################
+        # Entfernen des Kopie-Tags bei tt_content
+        tt_content {
+            disablePrependAtCopy = 1
+            disableHideAtCopy = 1
+        }
+
+        ##################################
+        #Entfernen des Kopie-Tags bei pages
+        pages {
+            disablePrependAtCopy = 1
+            disableHideAtCopy = 1
+        }
+    }
+
+    ##################################
+    # Cache leeren wenn Änderungen an folgenden Seite gemacht wurde
+    clearCacheCmd = 1,12,14,15
+
+}
+##################################
+# Vorbelegung von Felder
+##################################
+TCAdefaults {
+
+    ##################################
+    # Vorbelegung von container für Seiten
+    pages{
+        tx_t3sbootstrap_container = container
+        tx_pagespeedinsights_check = 1
+        hidden = 0
+    }
+
+   ##################################
+   # Vorbelegung von Feldern in Content Elementen
+   tt_content{
+        tx_t3sbootstrap_inTextImgRowWidth = none
+   }
+
+    ##################################
+    # Vorbelegung von News
+    tx_news_domain_model_news {
+        #author =  John Doe
+        # Foreign record syntax <tablename>_<uid>
+        #categories = sys_category_2, sys_category_5
+    }
+
+}

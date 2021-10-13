@@ -1,0 +1,20 @@
+seo_sitemap {
+    config {
+        additionalHeaders {
+            20.header = X-Robots-Tag:index
+        }
+    }
+}
+plugin.tx_seo {
+    config {
+        xmlSitemap {
+            sitemaps {
+                pages {
+                    config {
+                        useCacheHash = 0
+                    }
+                }
+            }
+        }
+    }
+}

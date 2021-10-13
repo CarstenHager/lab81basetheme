@@ -1,0 +1,6 @@
+imports:
+  - { resource: "EXT:t3sbootstrap/Configuration/RTE/CodesnippetFa.yaml" }
+
+editor:
+  config:
+    forcePasteAsPlainText: true
