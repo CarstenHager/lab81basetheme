@@ -26,5 +26,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Carsten Hager',
     'author_email' => 'ch@lab81.de',
     'author_company' => 'Lab81 Medienagentur',
-    'version' => '1.0.0',
+    'version' => '5.0.0',
 ];

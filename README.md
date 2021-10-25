@@ -1,4 +1,4 @@
 Sitepackage for the project "lab81basetheme"
 ==============================================================
 
-Add some explanation here.
+Persönliche Anpassungen für die EXT t3sbootstrap.

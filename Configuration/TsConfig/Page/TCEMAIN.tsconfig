@@ -90,10 +90,10 @@ TCAdefaults {
 
     ##################################
     # Vorbelegung von News
-    tx_news_domain_model_news {
-        #author =  John Doe
-        # Foreign record syntax <tablename>_<uid>
-        #categories = sys_category_2, sys_category_5
-    }
+#    tx_news_domain_model_news {
+#        author =  John Doe
+##       Foreign record syntax <tablename>_<uid>
+#        categories = sys_category_2, sys_category_5
+#    }
 
 }

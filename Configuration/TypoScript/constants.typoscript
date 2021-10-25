@@ -24,11 +24,11 @@ plugin.lab81basetheme {
 
 bootstrap {
 
-    disable{
+    disable {
         jquery = 1
     }
 
-    cdn{
+    cdn {
         enable = 0
     }
 
@@ -70,6 +70,7 @@ bootstrap {
     config {
         pageContentExtraClass = py-4
         globalPaddingTop = 0
+        carouselFiles = 1
     }
 
     navbar {
@@ -110,12 +111,12 @@ plugin {
 
     ##################################
     # Einstellungen CSSEO
-    tx_csseo {
-        social {
-            defaultImage = /fileadmin/Lab81/social_media/facebook.jpg
-            twitter.defaultImage = /fileadmin/Lab81/social_media/twitter.jpg
-        }
-    }
+    #    tx_csseo {
+    #        social {
+    #            defaultImage = /fileadmin/Lab81/social_media/facebook.jpg
+    #            twitter.defaultImage = /fileadmin/Lab81/social_media/twitter.jpg
+    #        }
+    #    }
 
     ##################################
     # Detailansicht für NewsSitemap

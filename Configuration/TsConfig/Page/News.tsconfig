@@ -1,3 +1,17 @@
-#tx_news.templateLayouts {
-#    55 = Lab81: Latest news
-#}
+tx_news{
+
+    // Autor und Mailadresse automatisch vorbelegen
+    predefine.author  = 1
+
+    templateLayouts {
+        // Custom List Templates
+        90 = Custom Template1 (list view)
+        91 = Custom Template2 (list view)
+        92 = Custom Template3 (list view)
+
+        // Custom Detail Templates
+        95 = Custom Template1 (detail view)
+        96 = Custom Template2 (detail view)
+    }
+
+}
