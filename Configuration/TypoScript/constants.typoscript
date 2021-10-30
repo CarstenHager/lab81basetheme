@@ -43,28 +43,10 @@ bootstrap {
         news.list.info = 1
         # Image ratio (list view): z.B.: 16:9, 4:3 - oder 0.
         news.list.imageRatio = 4:3
-        # Utility class für den "more-button" in der List-Ansicht.
-        news.list.buttonClass = primary
-        # Image mobile overlay (list view): wenn < 576px nur für Card-Templates.
-        news.list.imageOverlay = 1
-        # Loading Spinner Position (list view): with ajax pagination.
-        news.list.loadingSpinnerPosition = top
-        # Info (detail view): zeigt Info (Datum, Kategorie, Tags, Autor) in Detail-Ansicht.
-        news.detail.info = 1
-        # Image ratio (list view): z.B.: 16:9, 4:3 - oder 0.
-        news.detail.imageRatio = 16:9
-        # Lightbox (detail view): aktivieren für Detail-Ansicht.
-        news.detail.enableLightbox = 1
-        # Utility class für den "back-button" in der Detail-Ansicht.
-        news.detail.buttonClass = primary
-        # Teaser class (detail view): z.B.: "lead" oder jede andere.
-        news.detail.teaserClass = lead
         # Carousel (detail view): zeigt Bilder im Carousel, wenn aktiviert und mehr als ein Bild.
         news.detail.carousel = 1
-        # Breite für linke Spalte (detail view):
-        news.detail.leftGrid = 7
-        # Media oben (detail view): zeigt Bild oder Video oben, über dem Text.
-        news.detail.mediaOnTop = 0
+        # Dummy Image Rendern
+        news.list.dummyImageUid = 841
     }
 
     config {

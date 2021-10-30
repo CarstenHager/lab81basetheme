@@ -98,7 +98,7 @@
 
             # Default Image Bild ausblenden
             displayDummyIfNoMedia = 1
-            list.media.dummyImage = typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png
+#            list.media.dummyImage = typo3conf/ext/news/Resources/Public/Images/dummy-preview-image.png
 
             #geht
             enablePreviewOfHiddenRecords = 1
